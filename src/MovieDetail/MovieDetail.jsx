@@ -15,7 +15,7 @@ const MovieDetail = () => {
       setMovieDetails(response.data);
     };
     getMovieDetails();
-  },);
+  },[]);
   return (
     <div>
       <header className="header">
