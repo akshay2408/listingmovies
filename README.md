@@ -1,10 +1,18 @@
-## Technology Used: 
+## Technology and Tools Used  
 - React: It is used for frontend development
+- Axios: It is used for frontend development
+- Bootstrap: It is used for frontend development
 - Node: It is used for backend api creation through express js framework
 - MongoDb: It is noSql database we have used for storing our app data 
 
 
-## Setup:
+## Setup Instructions:
+- Clone github repo
+- Run Command - npm install 
+- Start Server - npm start
+
+## Tools Requirement:
+
 
 To get started you'll need to clone this repository:
 
@@ -42,10 +50,13 @@ npm start on root directory
 
 - Created movies list json file.
 - Save json data in mongodb.
-- Created api to insert json data and to get all movies list.
+- Created api to insert json data.
+- Created api to get all movies data.
+- Created api to get movie details data.
 
 ## What I have done In Frontend:
-- Created mobile view design for movies list and movie details
-- Render movies list on movieList component.
-- Render movie details on movieDetails component
+- Created mobile view design for movies list.
+- Created mobile view design for movies Details.
+- Render  movies list data on movieList component.
+- Render movie details data on movieDetails component
 - When we click on movie poster then it go movie details page.
