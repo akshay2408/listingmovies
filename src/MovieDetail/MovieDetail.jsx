@@ -2,8 +2,6 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
 
 const baseURL = "http://localhost:5000/movies";
 
@@ -27,7 +25,7 @@ const MovieDetail = () => {
               <Link to='/'>
               <i className="fal fa-arrow-left"></i>
                 </Link>
-              Movie Details <FontAwesomeIcon icon="fas fa-arrow-alt-circle-down" />
+              Movie Details
             </h2>
             <div className="dropdown header-right">
               <button
