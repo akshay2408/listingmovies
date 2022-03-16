@@ -1,18 +1,21 @@
 ## Technology and Tools Used  
 - React: It is used for frontend development
-- Axios: It is used for frontend development
-- Bootstrap: It is used for frontend development
+- Axios: It is used to get api data from backend
+- Bootstrap: It is used to style our app
 - Node: It is used for backend api creation through express js framework
-- MongoDb: It is noSql database we have used for storing our app data 
+- MongoDb: It is noSql database we have used for storing our app data.
+- Mongoose: Mongoose is an object modeling tool for MongoDB and Node.js , we can define our data model in just one place
 
+
+
+## Tools Requirement to setup:
+
+- Nodejs
+- Npm 
+- Mongodb
+- Mongoose
 
 ## Setup Instructions:
-- Clone github repo
-- Run Command - npm install 
-- Start Server - npm start
-
-## Tools Requirement:
-
 
 To get started you'll need to clone this repository:
 
