@@ -20,13 +20,6 @@ Install Frontend dependencies:
 
 ```
 npm install
-```
-
-To run the app:
-
-```
-npm start
-```
 
 ```For backend on another terminal
 
@@ -39,10 +32,11 @@ Install backend dependencies:
 npm install
 ```
 
-To run the app:
+To run the app :
 
 ```
-nodemon server.js
+npm start on root directory
+
 ```
 ## What I have done In backend:
 
