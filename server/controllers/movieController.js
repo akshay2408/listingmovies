@@ -3,14 +3,14 @@ const data = require("../configs/moviesData.json");
 
 const getMovieList = async (request, response) => {
   try {
-    const moviesList = await MovieModel.find({});
+    const moviesList = await MovieModel.find().select("_id title image");
     response.send(moviesList);
   } catch (error) {
     response.status(500).send(error);
   }
 };
 
-const setMovies = async (req, res) => {
+const setMovies = async () => {
   try {
     var movieData = await MovieModel.find({});
     if (movieData.length === 0) {

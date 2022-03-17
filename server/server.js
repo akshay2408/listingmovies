@@ -2,7 +2,7 @@ const express = require("express")
 const bodyParser = require("body-parser")
 const cors = require("cors");
 const Router = require("./routes/movieRoutes")
-const mongo = require('./configs/dbConfig')
+require('./configs/dbConfig')
 const app = express()
 
 const port = 5000
