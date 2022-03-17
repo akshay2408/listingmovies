@@ -8,12 +8,13 @@
 
 
 
-## Tools Requirement to setup:
+## Tools Required on machine to setup:
 
 - Nodejs
 - Npm 
 - Mongodb
 - Mongoose
+- Nodemon
 
 ## Setup Instructions:
 
@@ -25,12 +26,10 @@ Repo: https://github.com/akshay2408/listingmovies
 ```
 After clone
 
-```To start frontend
-
 Install Frontend dependencies:
 
 ```
-npm install
+### npm install
 
 ```For backend on another terminal
 
@@ -40,7 +39,7 @@ cd server
 Install backend dependencies:
 
 ```
-npm install
+### npm install
 ```
 
 To run the app :
@@ -51,15 +50,21 @@ npm start on root directory
 ```
 ## What I have done In backend:
 
-- Created movies list json file.
-- Save json data in mongodb.
-- Created api to insert json data.
-- Created api to get all movies data.
-- Created api to get movie details data.
+- Created movies list json file (static data).
+- Save movies json data in mongodb by seeding process.
+- Created api to get id,image,title.
+- Created api to get single movie details with more information.
 
 ## What I have done In Frontend:
-- Created mobile view design for movies list.
-- Created mobile view design for movies Details.
-- Render  movies list data on movieList component.
-- Render movie details data on movieDetails component
+
+- Created mobile and web view design for movies list.
+- Created mobile and web view design for movies Details.
+- Fetch id,title and image from backend on home.
+- Render movies list data on home page.
+- Display movie poster on home page.
+- Render movie details data on movieDetails page
 - When we click on movie poster then it go movie details page.
+
+## Not done:
+
+- Test Cases
