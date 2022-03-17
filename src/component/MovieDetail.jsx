@@ -1,9 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { Link } from "react-router-dom";
+import Spinner from "react-bootstrap/Spinner";
 
-const baseURL = "http://localhost:5000/movies";
 
 const MovieDetail = () => {
   const location = useLocation();
@@ -11,38 +10,31 @@ const MovieDetail = () => {
 
   useEffect(() => {
     const getMovieDetails = async () => {
-      const response = await axios(`${baseURL}/${location.state.movie._id}`);
-      setMovieDetails(response.data);
+      try {
+        const response = await axios.get(
+          `http://localhost:5000/movie/${location.state.movie._id}`
+        );
+        setMovieDetails(response.data);
+      } catch (e) {
+        console.log(e);
+      }
     };
     getMovieDetails();
-  },[]);
+  }, [location.state.movie._id]);
+
+
   return (
     <div>
-      <header className="header">
-        <div className="container">
-          <div className="d-flex justify-content-between align-items-center">
-            <h2>
-              <Link to='/'>
-              <i className="fal fa-arrow-left"></i>
-                </Link>
-              Movie Details
-            </h2>
-            <div className="dropdown header-right">
-              <button
-                type="button"
-                className="btn-dots"
-                data-bs-toggle="dropdown"
-              >
-              <i className="fal fa-ellipsis-v"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-      </header>
+    {!movieDetails ?
+        <Spinner className="loader" animation="border" role="status">
+        <span className="visually-hidden">Loading...</span>
+      </Spinner> 
+      :
+      <div>
       <div className="header-details">
         <div className="container">
-          <div className="d-flex justify-content-between align-items-center">
-            <h2>{movieDetails.title}</h2>
+          <div className="d-flex justify-content-between align-items-center py-3">
+            <h2 className="text-white">{movieDetails.title}</h2>
           </div>
         </div>
       </div>
@@ -53,7 +45,7 @@ const MovieDetail = () => {
               <div className="product-listing-box">
                 <a href="details.html">
                   <div className="product-listing-img">
-                    <img src={movieDetails.image} alt="img"/>
+                    <img src={movieDetails.image} alt="img" />
                   </div>
                 </a>
               </div>
@@ -63,35 +55,36 @@ const MovieDetail = () => {
                 <h3>{movieDetails.year}</h3>
                 <h5>{movieDetails.min}</h5>
                 <i className="bi bi-three-dots-vertical"></i>
-                <div className="rating-box">{movieDetails.rating}</div>
-                <div className="addbtn">
-                  <button className="btn btn-secondary">Add to Favorite</button>
+                <div className="rating-box mt-4">{movieDetails.rating}</div>
+                <div className="add_fav mt-3">
+                  <button className="btn btn-secondary w-100 py-3 mt-2">Add to Favorite</button>
                 </div>
               </div>
             </div>
           </div>
           <div className="row mb-4">
             <div className="col-12">
-              <p>
-              {movieDetails.description}
-              </p>
+              <p>{movieDetails.description}</p>
             </div>
+          
           </div>
           <div className="row mb-4">
             <div className="col-12">
               <div className="trailers">
                 <h4>Trailers</h4>
-                <div className="play-trailers">
-                 <i className="fal fa-play-circle"></i>Play Trailers 1
+                <div className="play-trailers py-4 px-3 mb-3">
+                  <div className="d-flex align-items-center"><i className="fal fa-play-circle"></i>Play trailer 1</div>
                 </div>
-                <div className="play-trailers">
-                 <i className="fal fa-play-circle"></i>Play Trailers 2
+                <div className="play-trailers py-4 px-3 mb-3">
+                <div className="d-flex align-items-center"><i className="fal fa-play-circle"></i>Play trailer 2</div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
+      </div>
+    }
     </div>
   );
 };

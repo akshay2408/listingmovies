@@ -1,11 +1,14 @@
-import "./App.css";
-import MoviesList from "./MovieList/MoviesList";
 import { Routes, Route } from "react-router-dom";
-import MovieDetail from "./MovieDetail/MovieDetail";
+
+import MoviesList from "./component/MoviesList";
+import MovieDetail from "./component/MovieDetail";
+import "./App.css";
+import Header from "./component/Header";
 
 function App() {
   return (
     <div>
+    <Header />
       <Routes>
         <Route exact path="/" element={<MoviesList />} />
         <Route exact path="/movie-details" element={<MovieDetail />} />
